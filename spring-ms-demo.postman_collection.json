@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "bdd48461-f60a-472c-9beb-85c8c5d4bba1",
+		"name": "spring-ms-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11485396"
+	},
+	"item": [
+		{
+			"name": "license",
+			"item": [
+				{
+					"name": "create license",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"licenseId\": \"1\",\n\"organizationId\": \"2\",\n\"productName\": \"pName\",\n\"licenseType\": \"lType\",\n\"licenseMax\": 11,\n\"licenseAllocated\": 10,\n\"comment\": \"Hi Hola\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/2/licenses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"2",
+								"licenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get license",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/organizations/2/licenses/b4138786-5e96-4aaa-951a-8f843d259d21/rest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"organizations",
+								"2",
+								"licenses",
+								"b4138786-5e96-4aaa-951a-8f843d259d21",
+								"rest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLicenseForOrg",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Outh2",
+			"item": [
+				{
+					"name": "get token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "thisissecret",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "eagleeye",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8901/auth/oauth/token{{params}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"oauth",
+								"token{{params}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1bde0ff8-37b9-4ee4-9185-965480ea5a27",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer c21b4d90-ce83-4a58-89c1-6edef811f68b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8901/auth/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8901",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "organization",
+			"item": [
+				{
+					"name": "get org",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create org",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "zuul",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zuul",
+			"item": [
+				{
+					"name": "routes",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "org service",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "license service",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sample",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-csrf-Token",
+						"value": "4c7c7007-dbe4-49cd-8b3a-a7984e501c8d",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=4E57E4EEE9DA13118AC1E443F6276673",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/rest/sayhi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"sayhi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sample auth get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "params",
+			"value": "?grant_type=password&scope=webclient&username=john.carnell&password=password1"
+		}
+	]
+}
